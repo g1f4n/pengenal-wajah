@@ -8,7 +8,7 @@ import math
 from time import sleep
 
 def get_encoded_faces():
-    base_dir = 'dataset/'
+    base_dir = 'https://pengenal-wajah.herokuapp.com/dataset/'
     encoded = {}
 
     for subdirs in os.listdir(base_dir):
