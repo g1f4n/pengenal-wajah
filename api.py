@@ -39,10 +39,11 @@ def Upload():
             os.mkdir(os.path.abspath('dataset\\' + path))
         if os.path.exists(os.path.abspath('dataset\\' + path)):
             dir_dataset = os.path.abspath('dataset\\' + path)
-            with open(dir_dataset + '/' + name + '.jpg', 'wb') as data:
-                image_url = request.files['image_url']
-                for i in image_url:
-                    data.write(i)
+            file.save(os.path.join(dir_dataset, name))
+            # with open(dir_dataset + '/' + name + '.jpg', 'wb') as data:
+            #     image_url = request.files['image_url']
+            #     for i in image_url:
+            #         data.write(i)
         data = {
                 'status': 200,
                 'message': 'Record inserted successfuly',
