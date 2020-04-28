@@ -93,5 +93,5 @@ def classify_face(im):
             name = name
     return {
         'name': name,
-        'confidence': result
+        # 'confidence': result
     }

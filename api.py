@@ -43,19 +43,19 @@ def Upload():
                 image_url = request.files['image_url']
                 for i in image_url:
                     data.write(i)
-        data = {
-                'status': 200,
-                'message': 'Record inserted successfuly',
-                'data' : {
-                    'nik': nik,
-                    'name': name
+            data = {
+                    'status': 200,
+                    'message': 'Record inserted successfuly',
+                    'data' : {
+                        'nik': nik,
+                        'name': name
+                    }
                 }
+        else :
+            data = {
+                'status': 400,
+                'message': 'Record Inserted Failed'
             }
-    # else :
-    #     data = {
-    #         'status': 400,
-    #         'message': 'Record Inserted Failed'
-    #     }
         return jsonify(data)
 
 @app.route('/facereco', methods=['POST'])
